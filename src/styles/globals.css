@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* === Primary - Pine Green === */
+  --color-primary: #1e5631;
+  --color-primary-hover: #174425;
+  --color-primary-light: #2d7a44;
+  --color-accent: #1e5631;
+  --color-accent-hover: #174425;
+
+  /* === CTA - Burnt Orange === */
+  --color-cta: #c45e0a;
+  --color-cta-hover: #a84f08;
+  --color-cta-light: #d97b2a;
+
+  /* === Backgrounds - Light === */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f3ee;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f8f7f2;
+  --color-border: #ddddd4;
+  --color-border-light: #e8e8e0;
+
+  /* === Text - Dark on Light === */
+  --color-text: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #777777;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-cta: #ffffff;
+
+  /* === Semantic === */
+  --color-success: #1e5631;
+  --color-error: #b91c1c;
+  --color-warning: #c45e0a;
+
+  /* === Shadows === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* === Typography === */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-rugged: 'Teko', 'Impact', 'Arial Black', sans-serif;
+
+  /* === Spacing Scale (8px base) === */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* === Timing === */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* === Layout === */
+  --max-width: 1200px;
+  --header-height: 72px;
+  --border-radius: 2px;
+  --border-radius-lg: 3px;
+  --border-radius-xl: 4px;
+}
+
+/* === Base Styles === */
+html {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  min-height: 100dvh;
+}
+
+/* === Element Resets === */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* === Selection === */
+::selection {
+  background: color-mix(in srgb, var(--color-cta) 25%, transparent);
+  color: var(--color-text);
+}
+
+/* === Focus States (Accessibility) === */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* === Typography Utilities === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}

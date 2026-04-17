@@ -1,0 +1,100 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 95;
+  width: min(320px, 85vw);
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  padding: calc(var(--header-height) + var(--space-lg)) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  min-height: 48px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
+}
+
+.navLink:hover {
+  color: var(--color-text);
+  background: var(--color-surface-elevated);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.active {
+  color: var(--color-primary);
+  background: var(--color-surface-elevated);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.phoneLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  min-height: 48px;
+  background: var(--color-cta);
+  color: var(--color-text-on-cta);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.phoneLink:hover {
+  background: var(--color-cta-hover);
+}
+
+.addressInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-text-tertiary);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .overlay,
+  .menu {
+    display: none;
+  }
+}

@@ -1,0 +1,16 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-cta));
+  z-index: 101;
+  will-change: width;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    display: none;
+  }
+}

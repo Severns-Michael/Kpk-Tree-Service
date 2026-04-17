@@ -1,0 +1,15 @@
+export const ANIMATION = {
+  MAX_SIMULTANEOUS: 5,
+  MAX_STAGGER_ITEMS: 10,
+  STAGGER_DELAY: 0.1,
+  DURATION_FAST: 0.15,
+  DURATION_NORMAL: 0.3,
+  DURATION_SLOW: 0.6,
+} as const;
+
+export const BREAKPOINTS = {
+  SM: 640,
+  MD: 768,
+  LG: 1024,
+  XL: 1280,
+} as const;
