@@ -34,4 +34,5 @@ export interface CompanyInfo {
   email: string;
   tagline: string;
   description: string;
+  facebookUrl: string;
 }

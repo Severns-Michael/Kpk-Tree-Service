@@ -41,9 +41,11 @@ export function Hero() {
           className={styles.title}
           variants={reducedMotion ? undefined : staggerItem}
         >
+          <span className={styles.srOnly}>KPK Tree Service &ndash; </span>
           <span className={styles.titleGreen}>Professional Tree Service</span>
           {' & '}
           <span className={styles.titleOrange}>Property Maintenance</span>
+          <span className={styles.srOnly}> in Mansfield, Ohio</span>
         </motion.h1>
 
         <motion.p
