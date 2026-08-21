@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { Header, Footer, Section, MobileMenu } from '@/components/layout';
 import { SkipToContent, ScrollProgress } from '@/components/ui';
-import { Hero, Services, About, Contact } from '@/components/sections';
+import { Hero, Services, About, Gallery, Contact } from '@/components/sections';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import styles from './App.module.css';
 
@@ -44,6 +44,10 @@ function App() {
 
         <Section id="about">
           <About />
+        </Section>
+
+        <Section id="gallery">
+          <Gallery />
         </Section>
 
         <Section id="contact">

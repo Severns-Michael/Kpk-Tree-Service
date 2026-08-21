@@ -11,6 +11,15 @@ export interface Service {
   icon: string;
 }
 
+export interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
 export interface CompanyInfo {
   name: string;
   phone: string;
