@@ -43,7 +43,6 @@ export function Gallery() {
                 decoding="async"
                 className={styles.image}
               />
-              <figcaption className={styles.caption}>{image.caption}</figcaption>
             </figure>
           </motion.li>
         ))}
