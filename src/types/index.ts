@@ -11,15 +11,6 @@ export interface Service {
   icon: string;
 }
 
-export interface Testimonial {
-  id: string;
-  name: string;
-  location: string;
-  text: string;
-  rating: number;
-  service: string;
-}
-
 export interface CompanyInfo {
   name: string;
   phone: string;
