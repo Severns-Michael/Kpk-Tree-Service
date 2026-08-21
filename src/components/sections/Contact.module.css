@@ -110,6 +110,29 @@
   min-height: 120px;
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.errorMessage {
+  padding: var(--space-md);
+  background: color-mix(in srgb, #c0392b 8%, transparent);
+  border: 1px solid color-mix(in srgb, #c0392b 35%, transparent);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.errorMessage a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .submitBtn {
   display: inline-flex;
   align-items: center;

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kpktreeservice.com/sitemap.xml
+Sitemap: https://kpktree.com/sitemap.xml

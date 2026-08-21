@@ -13,14 +13,27 @@ export function Contact() {
   const reducedMotion = useReducedMotion();
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setFormStatus('submitting');
 
-    // Simulate form submission
-    setTimeout(() => {
+    const body = new URLSearchParams();
+    new FormData(form).forEach((value, key) => {
+      body.append(key, value.toString());
+    });
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`Form submission failed: ${String(res.status)}`);
       setFormStatus('success');
-    }, 1000);
+    } catch {
+      setFormStatus('error');
+    }
   };
 
   return (
@@ -62,6 +75,12 @@ export function Contact() {
               name="contact"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <p className={styles.honeypot} aria-hidden="true">
+                <label>
+                  Don&apos;t fill this out if you&apos;re human:
+                  <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                </label>
+              </p>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>Name</label>
@@ -124,6 +143,13 @@ export function Contact() {
                   placeholder="Tell us about your project..."
                 />
               </div>
+              {formStatus === 'error' && (
+                <p className={styles.errorMessage} role="alert">
+                  Something went wrong sending your message. Please try again, or
+                  call us at{' '}
+                  <a href={`tel:${companyInfo.phone}`}>{companyInfo.phoneFormatted}</a>.
+                </p>
+              )}
               <button
                 type="submit"
                 className={styles.submitBtn}
