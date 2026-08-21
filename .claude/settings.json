@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git fetch *)"
+      "Bash(git fetch *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -A \"Mozilla/5.0\" \"https://www.facebook.com/p/KPK-Tree-Property-Maintenance-61573710742870/\")"
     ]
   }
 }

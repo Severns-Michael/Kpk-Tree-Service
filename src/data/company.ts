@@ -15,5 +15,5 @@ export const companyInfo: CompanyInfo = {
   tagline: 'Professional Tree Service & Property Maintenance',
   description:
     "Mansfield Ohio's trusted tree service and property maintenance company. From tree trimming and removal to roofing and landscaping, we handle it all.",
-  facebookUrl: 'https://www.facebook.com/kpktreeservice',
+  facebookUrl: 'https://www.facebook.com/p/KPK-Tree-Property-Maintenance-61573710742870/',
 };
